@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/constants
+# catalog-date 2008-08-18 10:38:42 +0200
+# catalog-license lppl
+# catalog-version 1.0
 Name:		texlive-constants
 Version:	1.0
 Release:	1
@@ -45,6 +51,7 @@ constants (with different symbols) may be defined.
 #- source
 %doc %{_texmfdistdir}/source/latex/constants/constants.dtx
 %doc %{_texmfdistdir}/source/latex/constants/constants.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -55,3 +62,5 @@ constants (with different symbols) may be defined.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
